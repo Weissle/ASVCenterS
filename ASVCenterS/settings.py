@@ -25,7 +25,6 @@ SECRET_KEY = '0*44ht@pmriz9&y_ma%2y2hy10@33j-v1^)(jgme8em-*k$m0!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,8 +54,11 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ASVCenterS.urls'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-# CORS_ORIGIN_WHITELIST = ('*')
-CORS_ALLOW_HEADERS = ('*')
+CORS_ALLOWED_ORIGINS=[
+    'http://1.116.246.209:80',
+    'http://localhost:9000',
+]
+ALLOWED_HOSTS = ['*']
 
 TEMPLATES = [
     {
