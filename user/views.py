@@ -25,9 +25,8 @@ def register_view(request):
 
 @csrf_exempt
 def login_view(request):
-    js = json.loads(request.body.decode('utf-8'))
-    username = js.get('username',None)
-    password = js.get('password',None)
+    username = request.GET.get('username',None)
+    password = request.GET.get('password',None)
     user = authenticate(username=username, password=password)
     if user is None:
         return JsonResponse({'result':400,'msg':'用户名或密码错误'})
